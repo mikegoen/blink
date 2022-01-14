@@ -18,7 +18,7 @@
       max-width: 800px;
     }
     .sleep > button {
-      margin: 0 1em;
+      margin: 1em;
     }
 
   </style>
@@ -67,6 +67,9 @@
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({sleepminutes: button.value})
           })
+          .then(response => response.text())
+          .then(text => statusMsg.innerText = text)
+
         }
       })
 
